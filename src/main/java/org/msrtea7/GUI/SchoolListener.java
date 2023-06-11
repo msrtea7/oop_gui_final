@@ -28,6 +28,10 @@ public class SchoolListener implements ActionListener{
             
             case "university":
                 popUp("university", "D school");
+                break;
+            
+            default:
+                return;
         }
     }
 
@@ -38,7 +42,7 @@ public class SchoolListener implements ActionListener{
         popFrame.setLayout(new BorderLayout());
 
         JTextField contentField = new JTextField("My " + schoolType + " is " + schoolName);
-        contentField.setHorizontalAlignment(JTextField.CENTER);
+        contentField.setHorizontalAlignment(SwingConstants.CENTER);
         
         popFrame.add(contentField, BorderLayout.NORTH);
     }

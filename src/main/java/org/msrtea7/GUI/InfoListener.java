@@ -21,6 +21,10 @@ public class InfoListener implements ActionListener{
             
             case "GuessMyHobby":
                 popUp();
+                break;
+            
+            default:
+                return;
         }
     }
 
@@ -41,18 +45,13 @@ public class InfoListener implements ActionListener{
 
         popFrame.add(componentBox, BorderLayout.NORTH);
 
-        hobbyBox.addActionListener(new ActionListener() {
+        hobbyBox.addActionListener(e -> {
+            String content = (String) hobbyBox.getSelectedItem();
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub
-                String content = (String) hobbyBox.getSelectedItem();
-
-                if (content.equals("black metal"))
-                    contentArea.setText("correct! I am a bloddy black metal head");
-                else
-                    contentArea.setText("");
-            }
+            if (content.equals("black metal"))
+                contentArea.setText("correct! I am a bloddy black metal head");
+            else
+                contentArea.setText("");
         });
     }
 }

@@ -22,6 +22,10 @@ public class MomentListener implements ActionListener{
 
             case "MyDawgs":
                 popUp("img3.jpg");
+                break;
+            
+            default:
+                return;
         }
     }
 
@@ -32,7 +36,6 @@ public class MomentListener implements ActionListener{
 
         ImageIcon imageIcon = new ImageIcon("./target/classes/imgs/" + text);
 
-        // ImageIcon imageIcon = new ImageIcon(getClass().getResource("./imgs/img1.jpg"));
         JLabel iconLabel = new JLabel(imageIcon);
 
         popFrame.add(iconLabel);
