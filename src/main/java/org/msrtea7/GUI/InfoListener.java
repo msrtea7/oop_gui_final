@@ -15,7 +15,7 @@ public class InfoListener implements ActionListener{
 
     /**
      * 1 level filter, distinguish what certain type of menu item the action is from, 'hobbies' or 'about me'
-     * @param e
+     * @param e   the window event
      */
 
     public void actionPerformed(ActionEvent e) {
@@ -42,6 +42,8 @@ public class InfoListener implements ActionListener{
      */
 
     private void popUp(){
+
+        /* Set up a new frame */
         JFrame popFrame = new JFrame("Guess my hobby");
         popFrame.setSize(400, 400);
         popFrame.setVisible(true);
@@ -50,6 +52,7 @@ public class InfoListener implements ActionListener{
         JComboBox<String> hobbyBox = new JComboBox<>(hobbies);
         JTextArea contentArea = new JTextArea();
 
+        /* set the layout and add the componet */
         popFrame.setLayout(new BorderLayout());
 
         Box componentBox = Box.createHorizontalBox();
@@ -58,6 +61,7 @@ public class InfoListener implements ActionListener{
 
         popFrame.add(componentBox, BorderLayout.NORTH);
 
+        /* add action listener to show the contenes if matches */
         hobbyBox.addActionListener(e -> {
             String content = (String) hobbyBox.getSelectedItem();
 

@@ -15,7 +15,7 @@ public class SchoolListener implements ActionListener{
 
     /**
      * 1 level filter, distinguish what certain type of school the action is from
-     * @param e
+     * @param e   the window event
      */
     public void actionPerformed(ActionEvent e) {
 
@@ -46,15 +46,18 @@ public class SchoolListener implements ActionListener{
 
     /**
      * Pop-up windows, on a second-level page, a JLabel shows the contents about my school information
-     * @param schoolType
-     * @param schoolName
+     * @param schoolType  String, the type of school
+     * @param schoolName   String, the name of the school
      */
     private void popUp(String schoolType, String schoolName){
+
+        /* Set up a new frame */
         JFrame popFrame = new JFrame(schoolType);
         popFrame.setSize(400, 400);
         popFrame.setVisible(true);
         popFrame.setLayout(new BorderLayout());
 
+        /* set the layout and add the componet */
         JLabel contentField = new JLabel("My " + schoolType + " school is " + schoolName);
         contentField.setHorizontalAlignment(SwingConstants.CENTER);
         

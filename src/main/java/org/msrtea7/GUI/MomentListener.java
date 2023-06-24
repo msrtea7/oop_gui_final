@@ -14,7 +14,7 @@ public class MomentListener implements ActionListener{
 
     /**
      * 1 level filter, distinguish which pic was chosen
-     * @param e
+     * @param e  the window event
      */
 
     public void actionPerformed(ActionEvent e) {
@@ -23,15 +23,15 @@ public class MomentListener implements ActionListener{
 
         switch(source) {
             case "MyNigga":
-                popUp("img1.jpg");
+                popUp("My nigga", "img1.jpg");
                 break;
 
             case "MyBitch":
-                popUp("img2.jpg");
+                popUp("My bitch", "img2.jpg");
                 break;
 
             case "MyDawgs":
-                popUp("img3.jpg");
+                popUp("My Dawgs", "img3.jpg");
                 break;
             
             default:
@@ -41,17 +41,20 @@ public class MomentListener implements ActionListener{
 
     /**
      * Pop-up windows, on a second-level page, displaying the corresponding img through JLabel, which was read through ImageIcon
-     * @param text
+     * @param imgName  string of the image file name
+     * @param frameName   string of the frame's name
      */
 
-    private void popUp(String text){
-        JFrame popFrame = new JFrame();
+    private void popUp(String frameName, String imgName){
+
+        /* Set up a new frame */
+        JFrame popFrame = new JFrame(frameName);
         popFrame.setSize(400, 400);
         popFrame.setVisible(true);
 
-        // ./target/classes/imgs/  if wanted to work within IDE. If wanted to usable within jar, use the path ./imgs/
+        /*    ./target/classes/imgs/  if wanted to work within IDE. If wanted to usable within jar, use the path ./imgs/     */
 
-        ImageIcon imageIcon = new ImageIcon("./target/classes/imgs/" + text);
+        ImageIcon imageIcon = new ImageIcon("./imgs/" + imgName);
         JLabel iconLabel = new JLabel(imageIcon);
 
         popFrame.add(iconLabel);

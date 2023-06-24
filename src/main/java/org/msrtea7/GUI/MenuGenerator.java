@@ -30,9 +30,7 @@ public class MenuGenerator {
     private JMenuItem guessMyHobby;
 
     /** Aggregation */
-    private InfoListener infoListener;
-    private MomentListener momentListener;
-    private SchoolListener schoolListener;
+    private SeniorListener seniorListener;
 
     /**
      * initialize the page
@@ -91,20 +89,19 @@ public class MenuGenerator {
      * Set ActionListener to the corresponding JMenu items. Noteble here, (1 to N) relation between listeners and menu items.
      */
     private void setAction(){
-        schoolListener = new SchoolListener();
-        momentListener = new MomentListener();
-        infoListener = new InfoListener();
-        
+
+        seniorListener = new SeniorListener();
+
         for (int i = 0; i < 4; i++){
-            schoolMenu.getItem(i).addActionListener(schoolListener);
+            schoolMenu.getItem(i).addActionListener(seniorListener.getSchoolListener());
         }
 
         for (int i = 0; i < 3; i++){
-            momentMenu.getItem(i).addActionListener(momentListener);
+            momentMenu.getItem(i).addActionListener(seniorListener.getMomentListener());
         }
 
         for (int i = 0; i < 2; i++){
-            infoMenu.getItem(i).addActionListener(infoListener);
+            infoMenu.getItem(i).addActionListener(seniorListener.getInfoListener());
         }
     }
 }
