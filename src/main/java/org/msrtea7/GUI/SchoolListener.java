@@ -6,28 +6,37 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+* A class implements ActionListener, taking action for the JMenu of school info
+* @author msrtea7
+*/
+
 public class SchoolListener implements ActionListener{
 
+    /**
+     * 1 level filter, distinguish what certain type of school the action is from
+     * @param e
+     */
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
         String source = e.getActionCommand();
 
         switch(source) {
 
             case "primary":
-                popUp("primary", "A school");
+                popUp("primary", "DaSiXiang school");
                 break;
             
             case "secondary":
-                popUp("secondary", "B school");
+                popUp("secondary", "DongFang school");
                 break;
             
             case "high":
-                popUp("high", "C school");
+                popUp("high", "ZheShiDaFuZhong school");
                 break;
             
             case "university":
-                popUp("university", "D school");
+                popUp("university", "CJLU");
                 break;
             
             default:
@@ -35,13 +44,18 @@ public class SchoolListener implements ActionListener{
         }
     }
 
+    /**
+     * Pop-up windows, on a second-level page, a JLabel shows the contents about my school information
+     * @param schoolType
+     * @param schoolName
+     */
     private void popUp(String schoolType, String schoolName){
         JFrame popFrame = new JFrame(schoolType);
         popFrame.setSize(400, 400);
         popFrame.setVisible(true);
         popFrame.setLayout(new BorderLayout());
 
-        JTextField contentField = new JTextField("My " + schoolType + " is " + schoolName);
+        JLabel contentField = new JLabel("My " + schoolType + " school is " + schoolName);
         contentField.setHorizontalAlignment(SwingConstants.CENTER);
         
         popFrame.add(contentField, BorderLayout.NORTH);

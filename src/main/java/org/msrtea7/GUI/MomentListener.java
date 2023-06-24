@@ -5,10 +5,20 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+* A class implements ActionListener, taking action for the JMenu of Moments
+* @author msrtea7
+*/
+
 public class MomentListener implements ActionListener{
 
+    /**
+     * 1 level filter, distinguish which pic was chosen
+     * @param e
+     */
+
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
         String source = e.getActionCommand();
 
         switch(source) {
@@ -28,6 +38,11 @@ public class MomentListener implements ActionListener{
                 return;
         }
     }
+
+    /**
+     * Pop-up windows, on a second-level page, displaying the corresponding img through JLabel, which was read through ImageIcon
+     * @param text
+     */
 
     private void popUp(String text){
         JFrame popFrame = new JFrame();

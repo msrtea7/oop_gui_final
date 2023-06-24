@@ -2,6 +2,11 @@ package org.msrtea7.GUI;
 
 import javax.swing.*;
 
+/**
+* Menu page generator, holding all the components on the initial page
+* @author msrtea7
+*/
+
 public class MenuGenerator {
 
     private JFrame menuFrame;
@@ -24,10 +29,14 @@ public class MenuGenerator {
     private JMenuItem aboutMe;
     private JMenuItem guessMyHobby;
 
+    /** Aggregation */
     private InfoListener infoListener;
     private MomentListener momentListener;
     private SchoolListener schoolListener;
 
+    /**
+     * initialize the page
+     */
     public void generate(){
         menuFrame = new JFrame("My Menu");
         menuFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -37,6 +46,9 @@ public class MenuGenerator {
         setAction();
     }
 
+    /**
+     * organize the related components
+     */
     private void setMenu(){
         menuBar = new JMenuBar();
         menuFrame.setJMenuBar(menuBar);
@@ -74,6 +86,10 @@ public class MenuGenerator {
         infoMenu.add(guessMyHobby, 1);
     }
 
+
+    /**
+     * Set ActionListener to the corresponding JMenu items. Noteble here, (1 to N) relation between listeners and menu items.
+     */
     private void setAction(){
         schoolListener = new SchoolListener();
         momentListener = new MomentListener();

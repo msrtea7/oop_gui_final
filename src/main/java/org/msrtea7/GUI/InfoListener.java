@@ -6,10 +6,19 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+/**
+* A class implements ActionListener, taking action for the JMenu of hobbies
+* @author msrtea7
+*/
+
 public class InfoListener implements ActionListener{
 
+    /**
+     * 1 level filter, distinguish what certain type of menu item the action is from, 'hobbies' or 'about me'
+     * @param e
+     */
+
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         
         // Here the source is the LabelText of the component
         String source = e.getActionCommand();
@@ -27,6 +36,10 @@ public class InfoListener implements ActionListener{
                 return;
         }
     }
+
+    /**
+     * Pop-up windows, on a second-level page, check the item from the Combo box and validify it with correct answer. If matches, a sentence would shows up on the text area
+     */
 
     private void popUp(){
         JFrame popFrame = new JFrame("Guess my hobby");
