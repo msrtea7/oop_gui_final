@@ -49,8 +49,9 @@ public class MomentListener implements ActionListener{
         popFrame.setSize(400, 400);
         popFrame.setVisible(true);
 
-        ImageIcon imageIcon = new ImageIcon("./target/classes/imgs/" + text);
+        // ./target/classes/imgs/  if wanted to work within IDE. If wanted to usable within jar, use the path ./imgs/
 
+        ImageIcon imageIcon = new ImageIcon("./target/classes/imgs/" + text);
         JLabel iconLabel = new JLabel(imageIcon);
 
         popFrame.add(iconLabel);
